@@ -1,4 +1,11 @@
-<?php ?>
+<?php
+    require_once('functions.php');
+    $db = new PDO('mysql:host=db; dbname=collections-project2', 'root', 'password');
+    $query = $db->prepare("SELECT * FROM `collections`;");
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $query->execute();
+    $allResults = $query->fetchAll();
+?>
 
 <!DOCTYPE html>
     <html lang="en">
@@ -17,7 +24,8 @@
                 <a class="all-link">ALL</a>
                 <a class="edit-link">EDIT</a>
             </div>
-            <div class="welcome-container"></div>
+            <div class="add"></div>
+            <div class="delete"><?php showALL($allResults); ?></div>
         </div>
     </body>
 </html>
