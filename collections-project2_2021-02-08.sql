@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.33)
 # Database: collections-project2
-# Generation Time: 2021-02-08 15:28:02 +0000
+# Generation Time: 2021-02-08 16:48:07 +0000
 # ************************************************************
 
 
@@ -29,9 +29,9 @@ CREATE TABLE `collections` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `food` varchar(30) DEFAULT 'null',
   `colour` tinyint(2) unsigned NOT NULL,
-  `size-rating` tinyint(2) unsigned NOT NULL,
-  `healty-rating` tinyint(2) unsigned NOT NULL,
-  `image-path` varchar(50) DEFAULT NULL,
+  `size_rating` tinyint(2) unsigned NOT NULL,
+  `healthy_rating` tinyint(2) unsigned NOT NULL,
+  `image_path` varchar(50) DEFAULT NULL,
   `delete` tinyint(1) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -39,7 +39,7 @@ CREATE TABLE `collections` (
 LOCK TABLES `collections` WRITE;
 /*!40000 ALTER TABLE `collections` DISABLE KEYS */;
 
-INSERT INTO `collections` (`id`, `food`, `colour`, `size-rating`, `healty-rating`, `image-path`, `delete`)
+INSERT INTO `collections` (`id`, `food`, `colour`, `size_rating`, `healthy_rating`, `image_path`, `delete`)
 VALUES
 	(1,'chocolate',5,3,1,'images/chocolate.jpeg',0),
 	(2,'banana',7,4,9,'images/banana.jpeg',0),
