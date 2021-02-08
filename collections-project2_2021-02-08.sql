@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.33)
 # Database: collections-project2
-# Generation Time: 2021-02-08 13:59:25 +0000
+# Generation Time: 2021-02-08 15:28:02 +0000
 # ************************************************************
 
 
@@ -28,28 +28,29 @@ DROP TABLE IF EXISTS `collections`;
 CREATE TABLE `collections` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `food` varchar(30) DEFAULT 'null',
-  `colour` varchar(20) DEFAULT NULL,
-  `size-rating` int(2) DEFAULT NULL,
-  `healty-rating` int(2) DEFAULT NULL,
+  `colour` tinyint(2) unsigned NOT NULL,
+  `size-rating` tinyint(2) unsigned NOT NULL,
+  `healty-rating` tinyint(2) unsigned NOT NULL,
   `image-path` varchar(50) DEFAULT NULL,
+  `delete` tinyint(1) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `collections` WRITE;
 /*!40000 ALTER TABLE `collections` DISABLE KEYS */;
 
-INSERT INTO `collections` (`id`, `food`, `colour`, `size-rating`, `healty-rating`, `image-path`)
+INSERT INTO `collections` (`id`, `food`, `colour`, `size-rating`, `healty-rating`, `image-path`, `delete`)
 VALUES
-	(1,'chocolate','5',3,1,'images/chocolate.jpeg'),
-	(2,'banana','7',4,9,'images/banana.jpeg'),
-	(3,'olives','3',1,6,'images/olives.jpeg'),
-	(4,'cheese','4',10,6,'images/cheese.jpeg'),
-	(5,'caramel','6',3,2,'images/caramel.jpeg'),
-	(6,'carrots','9',4,10,'images/carrots.jpeg'),
-	(7,'blueberry','8',1,9,'images/blueberry.jpeg'),
-	(8,'vienetta','6',6,0,'images/vienetta.jpeg'),
-	(9,'ice','0',2,10,'images/ice.jpeg'),
-	(10,'baking powder','3',0,0,'images/bakingpowder.jpeg');
+	(1,'chocolate',5,3,1,'images/chocolate.jpeg',0),
+	(2,'banana',7,4,9,'images/banana.jpeg',0),
+	(3,'olives',3,1,6,'images/olives.jpeg',0),
+	(4,'cheese',4,10,6,'images/cheese.jpeg',0),
+	(5,'caramel',6,3,2,'images/caramel.jpeg',0),
+	(6,'carrots',9,4,10,'images/carrots.jpeg',0),
+	(7,'blueberry',8,1,9,'images/blueberry.jpeg',0),
+	(8,'vienetta',6,6,0,'images/vienetta.jpeg',0),
+	(9,'ice',0,2,10,'images/ice.jpeg',0),
+	(10,'baking powder',3,0,0,'images/bakingpowder.jpeg',0);
 
 /*!40000 ALTER TABLE `collections` ENABLE KEYS */;
 UNLOCK TABLES;
