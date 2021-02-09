@@ -35,21 +35,3 @@ function showIndividual($allResults, $id){
         }
     }
 }
-
-function getLastId($lastItem){
-
-}
-
-//dbRowData[0] = $row["id"];
-//dbRowData[1] = $row["food"];
-//dbRowData[2] = $row["colour"];
-//dbRowData[3] = $row["size_rating"];
-//dbRowData[4] = $row["healthy_rating"];
-//dbRowData[5] = $row["delete"];
-
-//$id = $row["id"];
-//$Food = $row["food"];
-//$Colour_Rating = $row["colour"];
-//$Size_Rating = $row["size_rating"];
-//$Healthy_Rating = $row["healthy_rating"];
-//$Delete = $row["delete"];
