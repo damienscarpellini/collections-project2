@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 /**
  * @param $allResults - store all results in the database
@@ -21,7 +22,7 @@ function showAll($allResults){
 
 function showIndividual($allResults, $id){
     foreach ($allResults as $row) {
-        $dbRowData = [
+        $newSession = [
             'id' => $row["id"],
             'food' => $row["food"],
             'colour' => $row["colour"],
@@ -29,11 +30,14 @@ function showIndividual($allResults, $id){
             'healthy' => $row["healthy_rating"],
             'image' => $row['image_path'],
             'delete' => $row["delete"]];
-                 if($id==$dbRowData['id']){
-                    return $dbRowData;
-                  }
-        var_dump($dbRowData);
+        if($id==$newSession['id']){
+            return $newSession;
+        }
     }
+}
+
+function getLastId($lastItem){
+
 }
 
 //dbRowData[0] = $row["id"];

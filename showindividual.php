@@ -1,19 +1,38 @@
 <?php
     require_once('functions.php');
     $db = new PDO('mysql:host=db; dbname=collections-project2', 'root', 'password');
-    $query = $db->prepare("SELECT * FROM `collections`;");
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    $query->execute();
-    $allResults = $query->fetchAll();
-    $currentId = 1;
-    $dbRowData = showIndividual($allResults, $currentId);
-    $currentId = $dbRowData['id'];
-    $currentFood = $dbRowData['food'];
-    $currentColour = $dbRowData['colour'];
-    $currentSize = $dbRowData['size'];
-    $currentHealthy = $dbRowData['healthy'];
-    $currentImage = $dbRowData['image'];
-    $currentDelete = $dbRowData['delete'];
+    $allItems = $db->prepare("SELECT * FROM `collections`;");
+    $allItems->execute();
+    $allResults = $allItems->fetchAll();
+    $numberOfItemInArray = count($allResults);
+    $lastItem = $allResults[$numberOfItemInArray - 1];
+    $firstItem = $allResults[0];
+
+    if(isset( $_GET["next-button"])){
+        $currentId = $_SESSION['id'] + 1;
+            if ($currentId == $lastItem['id'] + 1){
+                $currentId = 1;
+            }
+            $_SESSION = showIndividual($allResults, $currentId);
+    } elseif(isset( $_GET["previous-button"])){
+        $currentId = $_SESSION['id'] - 1;
+            if ($currentId == $firstItem['id'] - 1) {
+                $currentId = 10;
+            }
+        $_SESSION = showIndividual($allResults, $currentId);
+    } else {
+        $currentId = 1;
+        $_SESSION = showIndividual($allResults, $currentId);
+    }
+
+    $currentId = $_SESSION['id'];
+    $currentFood = $_SESSION['food'];
+    $currentColour = $_SESSION['colour'];
+    $currentSize = $_SESSION['size'];
+    $currentHealthy = $_SESSION['healthy'];
+    $currentImage = $_SESSION['image'];
+    $currentDelete = $_SESSION['delete'];
 
 ?>
 
@@ -45,9 +64,14 @@
                     <div class="stats"><?php echo $currentHealthy ?></div>
                 </div>
                 <div class="buttons-container">
-                    <div class="previous-button"></div>
+                    <div class="previous-button">
+                        <form action="showindividual.php" method="get"><input type="submit" id="previous-button" name="previous-button" value="Previous"></form>
+                    </div>
                     <div class="db-id-number"><?php echo $currentId; ?></div>
-                    <div class="next-button"><?php var_dump($dbRowData); ?></div>
+                    <div class="next-button">
+                        <form action="showindividual.php" method="get"><input type="submit" id="next-button" name="next-button" value="Next"></form>
+
+                    </div>
                 </div>
             </div>
         </div>
