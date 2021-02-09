@@ -1,11 +1,17 @@
-<?php ?>
+<?php
+    require_once('functions.php');
+    $db = new PDO('mysql:host=db; dbname=collections-project2', 'root', 'password');
+    $query = $db->prepare("SELECT * FROM `collections`;");
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $query->execute();
+    $allResults = $query->fetchAll();
+?>
 
 <!DOCTYPE html>
     <html lang="en">
     <head>
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8">
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home</title>
     </head>
     <body>
