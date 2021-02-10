@@ -111,7 +111,7 @@
 
 .body-container {
     position: relative;
-    top: -15%;
+    top: 8%;
     width: 80%;
     height: 50%;
     display: flex;
@@ -132,7 +132,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 50%;
+    max-width: 240px;
+    margin: 0 auto;
 }
 
 .buttons-container {
@@ -140,6 +143,8 @@
     flex-direction: row;
     justify-content: space-between;
     width: 80%;
+    max-width: 240px;
+    margin: 0 auto;
 }
 
 /* all page */
@@ -151,11 +156,15 @@
     position: relative;
     top: 5%;
     background-color: beige;
+    max-width: 800px;
+    min-width: 320px;
+    margin: 0 auto;
 }
 .item-card {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
+    align-items: center;
     height: 100%;
     width: 100%;
     /*border: 2px solid black;*/
@@ -166,6 +175,9 @@
     width: 49%;
     /*border: 1px solid black;*/
     object-fit: cover;
+    max-width: 220px;
+    min-height: 100px;
+    margin: 0 auto;
 
 }
 
@@ -180,4 +192,10 @@
     justify-content: space-evenly;
     align-items: center;
     border: 1px solid black;
+    margin-left: 0;
 }
+
+.all-items-image-of-food {
+    margin-right: 0;
+}
+
