@@ -1,3 +1,10 @@
+*, *:before, *:after {
+    padding: 0px;
+    font-size: 10px;
+    margin: 0px;
+
+}
+
 .container {
     background-color: beige;
     width: 100vw;
@@ -8,11 +15,115 @@
 }
 
 .logo-container, .header-container, .nav-container, .welcome-container, .link {
-    border: 2px solid black;
+    /*border: 2px solid black;*/
+}
+
+.header-container {
+    width: 100vw;
+    height: 20vh;
+    /*border: 2px solid black;*/
+    display: flex;
+    flex-flow: row nowrap;
+
+
 }
 
 .logo-container {
-
+    /*border: 2px solid black;*/
+    width: 30%;
+    height: 100%;
+    display: block;
 }
 
+.logo-image {
+    flex-shrink: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    /*border: 2px solid black;*/
+    width: 70%;
+    height: 100%;
+}
+
+.header h1 {
+    height: 50%;
+    width: 100%;
+    font-size: 5rem;
+    text-align: center;
+    /*border: 2px solid black;*/
+}
+
+.nav-container {
+    height: 50%;
+    width: 100%;
+    /*border: 2px solid black;*/
+    background-color: aquamarine;
+}
+
+.nav-buttons {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    /*border: 2px solid black;*/
+}
+
+.nav-buttons li {
+    width:100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    /*border: 2px solid black;*/
+}
+
+.link-button {
+    height: 100%;
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    /*border: 2px solid black;*/
+    text-align: center;
+    line-height: 350%;
+    font-size: 1.5rem;
+}
+
+.welcome-container {
+    /*border: 2px solid black;*/
+    width: 80%;
+    height: 40%;
+    font-size: 5rem;
+    /*margin: auto auto;*/
+    text-align: center;
+}
+
+.body-container {
+    width: 75%;
+    height: 70%;
+}
+
+.image-of-food {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid black;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
