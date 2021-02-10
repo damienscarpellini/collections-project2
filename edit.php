@@ -1,10 +1,6 @@
 <?php
     require_once('functions.php');
-    $db = new PDO('mysql:host=db; dbname=collections-project2', 'root', 'password');
-    $query = $db->prepare("SELECT * FROM `collections`;");
-    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    $query->execute();
-    $allResults = $query->fetchAll();
+
 ?>
 
 <!DOCTYPE html>

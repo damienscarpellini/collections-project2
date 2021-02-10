@@ -12,6 +12,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+
 }
 
 .logo-container, .header-container, .nav-container, .welcome-container, .link {
@@ -100,6 +101,8 @@
     font-size: 5rem;
     /*margin: auto auto;*/
     text-align: center;
+    position: relative;
+    top: -15%;
 }
 
 .body-container {
@@ -118,7 +121,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    border: 2px solid black;
+    /*border: 2px solid black;*/
 }
 
 .buttons-container {
@@ -127,3 +130,31 @@
     justify-content: space-between;
 }
 
+.all-items-container {
+    width: 80%;
+    height: 70%;
+    /*border: 2px solid black;*/
+    position: relative;
+    top: 5%;
+}
+.item-card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    /*border: 2px solid black;*/
+
+}
+.all-items-image-of-food, .all-items-stats-container {
+    height: 20%;
+    width: 49%;
+    border: 1px solid black;
+    object-fit: cover;
+
+}
+
+.stats-header {
+    text-align: center;
+    font-weight: bold;
+}
