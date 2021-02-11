@@ -17,6 +17,7 @@ if (isset($_GET["next-button"])) {
     if ($currentId == $firstItem['id'] - 1) {
         $currentId = $lastItem['id'];
     }
+
     $_SESSION = showIndividual($allResults, $currentId);
 } else {
     $currentId = 1;
