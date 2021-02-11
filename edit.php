@@ -2,6 +2,30 @@
     require_once('functions.php');
     $allResults = getFoodFromDB();
 
+
+    if(isset($_POST['submit'])) {
+        $food = $_POST['input-food-name'];
+        $colourRating = $_POST['input-colour-rating'];
+        $sizeRating = $_POST['input-size-rating'];
+        $healthyRating = $_POST['input-healthy-rating'];
+        $filePath = $_POST['input-file-path'] . '`';
+        $db = getDBConnection(); //open db connection
+        $insert = addEntryToDb($db); //get insert code with placeholders
+        $insertData = $db->prepare($insert);
+        $insertData->bindParam(':food' , $food);
+        $insertData->bindParam(':colour' ,  $colourRating);
+        $insertData->bindParam(':size_rating' , $sizeRating);
+        $insertData->bindParam(':healthy_rating' , $healthyRating);
+        $insertData->bindParam(':image_path' , $filePath);
+        var_export($insertData);
+        $insertData->execute();
+        unset($_POST['input-food-name']);
+        unset($_POST['input-colour-rating']);
+        unset($_POST['input-size-rating"']);
+        unset($_POST['input-healthy-rating']);
+        unset($_POST['input-file-path']);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -27,8 +51,8 @@
                     </div>
                 </div>
             </div>
-            <div class="add"></div>
-            <div class="delete"><?php showALL($allResults); ?></div>
+            <div class="edit"><?php echo editALL($allResults); ?></div>
+
         </div>
     </body>
 </html>

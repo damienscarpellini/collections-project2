@@ -59,4 +59,52 @@ function getFoodFromDB(){
     return $allResults;
 }
 
+function getDBConnection() {
+    return $db = new PDO('mysql:host=db; dbname=collections-project2', 'root', 'password');
+}
+
+function editALL($items) {
+    $allCards = '
+                    <div class="edit-title-row">
+                       <div class="title-row col1">Food Name</div>
+                       <div class="title-row col2">Colour Rating</div>
+                       <div class="title-row col3">Size Rating</div>
+                       <div class="title-row col4">Healthy Rating</div>
+                       <div class="title-row col5">File Path</div>
+                     </div>
+                    ';
+    foreach ($items as $item) {
+        $allCards .=  '
+                <div class="edit-item-card">
+                    <div class="edit-stats-data col1">' . $item['food'] . '</div>
+                    <div class="edit-stats-data col2">' . $item['colour'] . '</div>
+                    <div class="edit-stats-data col3">' . $item['size_rating'] . '</div>
+                    <div class="edit-stats-data col4">' . $item['healthy_rating'] . '</div>
+                    <div class="edit-stats-data col5"> ' . $item['image_path'] . '"</div>
+                </div>';
+    }
+    $allCards .= '               
+                        <form class="add-data-form" action="edit.php" method="post">
+                            <input class="input-col1" type="text" name="input-food-name">
+                            <input class="input-col2" type="number" name="input-colour-rating">
+                            <input class="input-col3" type="number" name="input-size-rating">
+                            <input class="input-col4" type="number" name="input-healthy-rating">
+                            <input class="input-col5" type="text" name="input-file-path">
+                            <input class="add-button" type="submit" name="submit" value="Add">
+                        </form>
+                      </div> ';
+    return $allCards;
+}
+
+
+function bindParams($a, $b, $insertData){
+//    $b = '`' . $b . '`';
+    return $insertData->bindParam($a,$b);
+}
+
+function addEntryToDb($db){
+
+    return $addToDB = "INSERT INTO `collections` (`food`, `colour`, `size_rating`, `healthy_rating`, `image_path`) VALUES (:food, :colour, :size_rating, :healthy_rating, :image_path);";
+
+}
 
