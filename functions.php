@@ -1,16 +1,5 @@
 <?php
-
 session_start();
-
-$db = new PDO('mysql:host=db; dbname=collections-project2', 'root', 'password');
-$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-$allItems = $db->prepare("SELECT * FROM `collections`;");
-$allItems->execute();
-$allResults = $allItems->fetchAll();
-$numberOfItemInArray = count($allResults);
-$lastItem = $allResults[$numberOfItemInArray - 1];
-$firstItem = $allResults[0];
-
 
 $currentId = $_SESSION['id'];
 $currentFood = $_SESSION['food'];
@@ -19,9 +8,6 @@ $currentSize = $_SESSION['size'];
 $currentHealthy = $_SESSION['healthy'];
 $currentImage = $_SESSION['image'];
 $currentDelete = $_SESSION['delete'];
-$_SESSION['lastItem'] = $lastItem['id'];
-$_SESSION['firstItem'] = $firstItem['id'];
-$_SESSION['allResults'] = $allResults;
 
 /**
  * @param $allResults - associative array you want to itterate through.
@@ -64,5 +50,13 @@ function showAll($items) {
     return $allCards;
 }
 
+function getFoodFromDB(){
+    $db = new PDO('mysql:host=db; dbname=collections-project2', 'root', 'password');
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $allItems = $db->prepare("SELECT * FROM `collections`;");
+    $allItems->execute();
+    $allResults = $allItems->fetchAll();
+    return $allResults;
+}
 
 

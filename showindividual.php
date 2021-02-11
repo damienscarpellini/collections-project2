@@ -1,5 +1,9 @@
 <?php
 require_once('functions.php');
+$allResults = getFoodFromDB();
+$numberOfItemInArray = count($allResults);
+$lastItem = $allResults[$numberOfItemInArray - 1];
+$firstItem = $allResults[0];
 
 
 if (isset($_GET["next-button"])) {
