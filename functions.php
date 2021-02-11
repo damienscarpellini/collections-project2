@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 $db = new PDO('mysql:host=db; dbname=collections-project2', 'root', 'password');
@@ -9,6 +10,7 @@ $allResults = $allItems->fetchAll();
 $numberOfItemInArray = count($allResults);
 $lastItem = $allResults[$numberOfItemInArray - 1];
 $firstItem = $allResults[0];
+
 
 $currentId = $_SESSION['id'];
 $currentFood = $_SESSION['food'];

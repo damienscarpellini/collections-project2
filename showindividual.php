@@ -26,7 +26,6 @@ $currentSize = $_SESSION['size'];
 $currentHealthy = $_SESSION['healthy'];
 $currentImage = $_SESSION['image'];
 $currentDelete = $_SESSION['delete'];
-
 ?>
 
 <!DOCTYPE html>
