@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.33)
 # Database: collections-project2
-# Generation Time: 2021-02-08 16:48:07 +0000
+# Generation Time: 2021-02-10 17:16:53 +0000
 # ************************************************************
 
 
@@ -41,16 +41,16 @@ LOCK TABLES `collections` WRITE;
 
 INSERT INTO `collections` (`id`, `food`, `colour`, `size_rating`, `healthy_rating`, `image_path`, `delete`)
 VALUES
-	(1,'chocolate',5,3,1,'images/chocolate.jpeg',0),
-	(2,'banana',7,4,9,'images/banana.jpeg',0),
-	(3,'olives',3,1,6,'images/olives.jpeg',0),
-	(4,'cheese',4,10,6,'images/cheese.jpeg',0),
-	(5,'caramel',6,3,2,'images/caramel.jpeg',0),
-	(6,'carrots',9,4,10,'images/carrots.jpeg',0),
-	(7,'blueberry',8,1,9,'images/blueberry.jpeg',0),
-	(8,'vienetta',6,6,0,'images/vienetta.jpeg',0),
-	(9,'ice',0,2,10,'images/ice.jpeg',0),
-	(10,'baking powder',3,0,0,'images/bakingpowder.jpeg',0);
+	(1,'Chocolate',5,3,1,'images/chocolate.jpeg',0),
+	(2,'Banana',7,4,9,'images/banana.jpeg',0),
+	(3,'Olives',3,1,6,'images/olives.jpeg',0),
+	(4,'Cheese',4,10,6,'images/cheese.jpeg',0),
+	(5,'Caramel',6,3,2,'images/caramel.jpeg',0),
+	(6,'Carrots',9,4,10,'images/carrots.jpeg',0),
+	(7,'Blueberry',8,1,9,'images/blueberry.jpeg',0),
+	(8,'Vienetta',6,6,0,'images/vienetta.jpeg',0),
+	(9,'Ice',0,2,10,'images/ice.jpeg',0),
+	(10,'Baking Powder',3,0,0,'images/bakingpowder.jpeg',0);
 
 /*!40000 ALTER TABLE `collections` ENABLE KEYS */;
 UNLOCK TABLES;
