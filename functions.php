@@ -22,7 +22,6 @@ $currentDelete = $_SESSION['delete'];
 $_SESSION['lastItem'] = $lastItem['id'];
 $_SESSION['firstItem'] = $firstItem['id'];
 $_SESSION['allResults'] = $allResults;
-var_dump($allResults);
 
 /**
  * @param $allResults - associative array you want to itterate through.
