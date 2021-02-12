@@ -80,7 +80,7 @@ function editALL($items) {
                     <div class="edit-stats-data col2">' . $item['colour'] . '</div>
                     <div class="edit-stats-data col3">' . $item['size_rating'] . '</div>
                     <div class="edit-stats-data col4">' . $item['healthy_rating'] . '</div>
-                    <div class="edit-stats-data col5"> ' . $item['image_path'] . '"</div>
+                    <div class="edit-stats-data col5"> ' . $item['image_path'] . '</div>
                 </div>';
     }
     $allCards .= '               
